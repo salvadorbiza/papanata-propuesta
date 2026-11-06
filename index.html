@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="Papanata · Ser feliz es la papa">
+<meta property="og:description" content="Página de muestra hecha por 1week para Papanata, Janequeo con Freire, Concepción.">
+<meta property="og:image" content="esquina.webp">
+<title>Papanata Concepción</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: letrero de esquina — bandas a todo el ancho (negro, amarillo, rojo) como la fachada, contenido en un ancho de 1160px */
+:root{
+  --negro:#16110F;
+  --negro-2:#221B18;
+  --linea:#3A302B;
+  --amarillo:#FFC72C;
+  --rojo:#D7261E;
+  --rojo-osc:#A9180F;
+  --crema:#FFF6DF;
+  --gris:#CFC5BE;
+  --display:"Anton", Impact, "Arial Narrow Bold", sans-serif;
+  --body:"Work Sans", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.cinta-track{animation:none!important}}
+body{background:var(--negro);color:var(--crema);font-family:var(--body);font-size:17px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--negro)}
+a{color:inherit}
+a:focus-visible,button:focus-visible,label:focus-within{outline:3px solid var(--amarillo);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left,0px));padding-right:max(16px, env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.5px;line-height:.95;margin:0;text-wrap:balance}
+p{margin:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:800;font-size:17px;text-decoration:none;border:2px solid transparent;cursor:pointer;font-family:var(--body);transition:transform .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-am{background:var(--amarillo);color:var(--negro)}
+.btn-rojo{background:var(--rojo);color:#fff}
+.btn-linea{border-color:var(--crema);color:var(--crema);background:transparent}
+.etq{font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--negro);border-bottom:1px solid var(--linea)}
+.head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none}
+.marca svg{width:34px;height:40px;flex:none}
+.marca b{display:block;font-family:var(--display);font-weight:400;font-size:28px;line-height:1;color:var(--amarillo);letter-spacing:1px}
+.marca small{display:block;font-size:10px;font-weight:800;letter-spacing:1.6px}
+nav{display:flex;align-items:center;gap:22px}
+nav a.lk{text-decoration:none;font-weight:600;font-size:15px}
+nav a.lk:hover{color:var(--amarillo)}
+@media (max-width:760px){nav a.lk{display:none}.head .btn{min-height:44px;padding:0 18px;font-size:15px}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-block:56px 64px}
+.hero-txt{display:flex;flex-direction:column;gap:24px;min-width:0}
+.pill{align-self:flex-start;background:var(--rojo);color:#fff;padding:8px 14px;border-radius:6px}
+.hero h1{font-size:clamp(58px,9vw,118px)}
+.hero h1 span{color:var(--amarillo)}
+.hero .sub{font-size:19px;color:var(--gris);max-width:34ch}
+.acciones{display:flex;flex-wrap:wrap;gap:12px}
+.foto-hero{position:relative;max-width:100%}
+.foto-hero img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 30%;border-radius:28px;border:10px solid var(--amarillo);transform:rotate(1.5deg)}
+.sello{position:absolute;left:-18px;bottom:28px;background:var(--rojo);color:#fff;font-family:var(--display);font-size:30px;line-height:1;padding:16px 20px;border-radius:14px;transform:rotate(-4deg);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+@media (max-width:860px){.hero{grid-template-columns:1fr;gap:36px;padding-block:36px 48px}.foto-hero{max-width:440px;margin:0 auto;width:100%}.sello{left:8px}}
+
+/* cinta */
+.cinta{background:var(--amarillo);color:var(--negro);overflow:hidden;border-block:3px solid var(--negro)}
+.cinta-track{display:flex;width:max-content;animation:cinta 28s linear infinite}
+.cinta-track p{font-family:var(--display);font-size:28px;letter-spacing:2px;white-space:nowrap;padding:14px 0}
+@keyframes cinta{to{transform:translateX(-50%)}}
+
+/* secciones */
+section{padding-block:80px}
+.titulo{display:flex;flex-direction:column;gap:10px;margin-bottom:36px}
+.titulo h2{font-size:clamp(46px,7vw,76px)}
+.titulo p{color:var(--gris);max-width:52ch}
+
+/* carta */
+.carta{background:var(--negro-2)}
+.grid-carta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:900px){.grid-carta{grid-template-columns:1fr}}
+.prod{background:var(--negro);border:1px solid var(--linea);border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.prod-ilu{height:190px;display:flex;align-items:center;justify-content:center}
+.prod-ilu svg{height:150px;width:auto}
+.prod-cuerpo{padding:22px 24px 26px;display:flex;flex-direction:column;gap:8px;flex:1}
+.prod h3{font-size:34px}
+.prod p{color:var(--gris)}
+.precio{margin-top:auto;padding-top:12px;display:flex;justify-content:space-between;align-items:baseline;border-top:1px dashed var(--linea)}
+.precio b{font-family:var(--display);font-weight:400;font-size:30px;color:var(--amarillo)}
+.precio span{font-size:13px;color:var(--gris)}
+.nota{margin-top:20px;font-size:14px;color:var(--gris)}
+
+/* pedido */
+.pedido{background:var(--amarillo);color:var(--negro)}
+.pedido .titulo p{color:#4A3A14}
+.ped-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+@media (max-width:900px){.ped-grid{grid-template-columns:1fr}}
+.panel{background:var(--negro);color:var(--crema);border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:26px;min-width:0}
+fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+legend{font-family:var(--display);font-size:24px;letter-spacing:1px;margin-bottom:12px;padding:0}
+.opciones{display:flex;flex-wrap:wrap;gap:10px}
+.op{position:relative}
+.op input{position:absolute;opacity:0;inset:0;cursor:pointer;margin:0}
+.op span{display:inline-flex;align-items:center;min-height:46px;padding:0 18px;border-radius:999px;border:2px solid var(--linea);font-weight:700;font-size:15px;transition:all .15s}
+.op input:checked + span{background:var(--amarillo);border-color:var(--amarillo);color:var(--negro)}
+.op input:focus-visible + span{outline:3px solid var(--amarillo);outline-offset:3px}
+.cant{display:flex;align-items:center;gap:14px}
+.cant button{width:46px;height:46px;border-radius:50%;border:2px solid var(--linea);background:transparent;color:var(--crema);font-size:24px;font-weight:700;cursor:pointer}
+.cant output{font-family:var(--display);font-size:34px;min-width:2ch;text-align:center;font-variant-numeric:tabular-nums}
+.ticket{background:var(--crema);color:var(--negro);border-radius:6px;padding:28px 26px 30px;position:relative;box-shadow:0 18px 40px rgba(60,40,0,.25);display:flex;flex-direction:column;gap:16px;min-width:0}
+.ticket::before,.ticket::after{content:"";position:absolute;left:0;right:0;height:12px;background:radial-gradient(circle at 8px 0,transparent 7px,var(--crema) 7.5px) repeat-x;background-size:16px 12px}
+.ticket::before{top:-11px;transform:rotate(180deg)}
+.ticket::after{bottom:-11px}
+.ticket h3{font-size:30px}
+.ticket .msg{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:15px;white-space:pre-wrap;word-break:break-word;border-block:1px dashed #B9AD99;padding-block:16px;line-height:1.6}
+.ticket .fila{display:flex;flex-wrap:wrap;gap:10px}
+.ticket .btn-linea{border-color:var(--negro);color:var(--negro)}
+.aviso{font-size:13px;color:#5C503E}
+
+/* donde */
+.donde-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+@media (max-width:860px){.donde-grid{grid-template-columns:1fr}}
+.datos{display:flex;flex-direction:column;gap:22px;min-width:0}
+.dato{display:flex;flex-direction:column;gap:4px;padding-bottom:18px;border-bottom:1px solid var(--linea)}
+.dato .etq{color:var(--gris)}
+.dato p{font-size:21px;font-weight:700}
+.donde-foto img{display:block;width:100%;max-width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 35%;border-radius:24px}
+.donde-foto figure{margin:0;display:flex;flex-direction:column;gap:10px}
+.donde-foto figcaption{font-size:14px;color:var(--gris)}
+
+/* footer */
+footer{background:#0C0908;border-top:1px solid var(--linea)}
+.pie{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;padding-block:32px}
+.pie b{font-family:var(--display);font-weight:400;font-size:26px;color:var(--amarillo)}
+.pie p{font-size:14px;color:var(--gris)}
+.hecho{background:var(--rojo);color:#fff}
+.hecho .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding-block:18px;font-size:15px}
+.hecho b{font-weight:800}
+</style>
+<style>body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="cono" viewBox="0 0 300 340">
+      <rect x="78" y="60" width="24" height="170" rx="5" fill="#F4B92B" stroke="#C98714" stroke-width="3" transform="rotate(-14 90 230)"/>
+      <rect x="104" y="30" width="24" height="200" rx="5" fill="#FFE07A" stroke="#C98714" stroke-width="3" transform="rotate(-7 116 230)"/>
+      <rect x="132" y="18" width="24" height="212" rx="5" fill="#F4B92B" stroke="#C98714" stroke-width="3" transform="rotate(-2 144 230)"/>
+      <rect x="158" y="34" width="24" height="196" rx="5" fill="#FFE07A" stroke="#C98714" stroke-width="3" transform="rotate(4 170 230)"/>
+      <rect x="184" y="52" width="24" height="178" rx="5" fill="#F4B92B" stroke="#C98714" stroke-width="3" transform="rotate(10 196 230)"/>
+      <rect x="208" y="80" width="22" height="150" rx="5" fill="#FFE07A" stroke="#C98714" stroke-width="3" transform="rotate(17 219 230)"/>
+      <path d="M40 150 L260 150 L150 338 Z" fill="#D7261E"/>
+      <path d="M40 150 L260 150 L247 172 L53 172 Z" fill="#A9180F"/>
+      <rect x="28" y="198" width="244" height="40" rx="4" fill="#FFFFFF" transform="rotate(-7 150 218)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap head">
+    <a class="marca" href="#inicio" aria-label="Papanata, inicio">
+      <svg aria-hidden="true"><use href="#cono"/></svg>
+      <span><b>PAPANATA</b><small>SER FELIZ ES LA PAPA</small></span>
+    </a>
+    <nav aria-label="Principal">
+      <a class="lk" href="#carta">Carta</a>
+      <a class="lk" href="#pedido">Arma tu pedido</a>
+      <a class="lk" href="#donde">Dónde estamos</a>
+      <a class="btn btn-am" href="https://wa.me/56974308654" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <div class="wrap hero">
+    <div class="hero-txt">
+      <p class="etq pill">Janequeo esquina Freire · Concepción</p>
+      <h1>LAS PAPAS DE LA <span>ESQUINA AMARILLA</span></h1>
+      <p class="sub">Recién fritas, para uno o para compartir. Arma tu pedido aquí, mándalo por WhatsApp y pasa a buscarlo calentito.</p>
+      <div class="acciones">
+        <a class="btn btn-am" href="#pedido">Armar mi pedido</a>
+        <a class="btn btn-linea" href="#carta">Ver la carta</a>
+      </div>
+    </div>
+    <div class="foto-hero">
+      <img src="esquina.webp" alt="El local de Papanata: fachada amarilla, techo azul y letreros negros en la esquina de Janequeo con Freire">
+      <p class="sello">SER FELIZ<br>ES LA PAPA</p>
+    </div>
+  </div>
+
+  <div class="cinta" aria-hidden="true">
+    <div class="cinta-track">
+      <p>&nbsp;SER FELIZ ES LA PAPA · JANEQUEO CON FREIRE · RECIÉN FRITAS · CONCEPCIÓN ·&nbsp;</p>
+      <p>&nbsp;SER FELIZ ES LA PAPA · JANEQUEO CON FREIRE · RECIÉN FRITAS · CONCEPCIÓN ·&nbsp;</p>
+    </div>
+  </div>
+
+  <section class="carta" id="carta">
+    <div class="wrap">
+      <div class="titulo">
+        <h2>LA CARTA</h2>
+        <p>Elige el tamaño y la salsa. Todo se prepara al momento.</p>
+      </div>
+      <div class="grid-carta">
+        <article class="prod">
+          <div class="prod-ilu" style="background:var(--rojo)"><svg viewBox="0 0 300 340" aria-hidden="true"><use href="#cono"/></svg></div>
+          <div class="prod-cuerpo">
+            <h3>PORCIÓN INDIVIDUAL</h3>
+            <p>Para el antojo de uno, con la salsa que elijas.</p>
+            <div class="precio"><b>$ ____</b><span>precio del local</span></div>
+          </div>
+        </article>
+        <article class="prod">
+          <div class="prod-ilu" style="background:var(--amarillo)"><svg viewBox="0 0 300 340" aria-hidden="true"><use href="#cono"/></svg></div>
+          <div class="prod-cuerpo">
+            <h3>PARA COMPARTIR</h3>
+            <p>La bandeja grande para la mesa, la oficina o la previa.</p>
+            <div class="precio"><b>$ ____</b><span>precio del local</span></div>
+          </div>
+        </article>
+        <article class="prod">
+          <div class="prod-ilu" style="background:var(--crema)"><svg viewBox="0 0 300 340" aria-hidden="true"><use href="#cono"/></svg></div>
+          <div class="prod-cuerpo">
+            <h3>CON AGREGADOS</h3>
+            <p>Las papas con todo lo que le quieras poner encima.</p>
+            <div class="precio"><b>$ ____</b><span>precio del local</span></div>
+          </div>
+        </article>
+      </div>
+      <p class="nota">Carta de muestra: aquí van los productos, las fotos y los precios reales de Papanata.</p>
+    </div>
+  </section>
+
+  <section class="pedido" id="pedido">
+    <div class="wrap">
+      <div class="titulo">
+        <h2>ARMA TU PEDIDO</h2>
+        <p>Elige, revisa el ticket y mándalo directo al WhatsApp del local.</p>
+      </div>
+      <div class="ped-grid">
+        <form class="panel" id="form-pedido" aria-label="Arma tu pedido">
+          <fieldset>
+            <legend>1. ¿QUÉ PORCIÓN?</legend>
+            <div class="opciones">
+              <label class="op"><input type="radio" name="porcion" id="p-ind" value="Porción individual" checked><span>Individual</span></label>
+              <label class="op"><input type="radio" name="porcion" id="p-comp" value="Para compartir"><span>Para compartir</span></label>
+              <label class="op"><input type="radio" name="porcion" id="p-agr" value="Con agregados"><span>Con agregados</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>2. ¿CUÁNTAS?</legend>
+            <div class="cant">
+              <button type="button" id="menos" aria-label="Una menos">−</button>
+              <output id="cantidad" aria-live="polite">1</output>
+              <button type="button" id="mas" aria-label="Una más">+</button>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>3. SALSAS</legend>
+            <div class="opciones">
+              <label class="op"><input type="checkbox" name="salsa" id="s-ket" value="kétchup" checked><span>Kétchup</span></label>
+              <label class="op"><input type="checkbox" name="salsa" id="s-mayo" value="mayo"><span>Mayo</span></label>
+              <label class="op"><input type="checkbox" name="salsa" id="s-mos" value="mostaza"><span>Mostaza</span></label>
+              <label class="op"><input type="checkbox" name="salsa" id="s-aji" value="ají"><span>Ají</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>4. ¿CÓMO LO QUIERES?</legend>
+            <div class="opciones">
+              <label class="op"><input type="radio" name="entrega" id="e-retiro" value="Paso a buscarlo al local" checked><span>Paso a buscarlo</span></label>
+              <label class="op"><input type="radio" name="entrega" id="e-mesa" value="Me lo como ahí mismo"><span>Para comer ahí</span></label>
+            </div>
+          </fieldset>
+        </form>
+
+        <div class="ticket" aria-live="polite">
+          <p class="etq">Tu pedido</p>
+          <h3>PAPANATA · TICKET</h3>
+          <p class="msg" id="mensaje"></p>
+          <div class="fila">
+            <a class="btn btn-rojo" id="enviar" href="https://wa.me/56974308654" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+            <button class="btn btn-linea" type="button" id="copiar">Copiar pedido</button>
+          </div>
+          <p class="aviso">WhatsApp del local: <strong>+56 9 7430 8654</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="donde">
+    <div class="wrap donde-grid">
+      <div class="datos">
+        <div class="titulo" style="margin-bottom:6px"><h2>DÓNDE ESTAMOS</h2></div>
+        <div class="dato"><p class="etq">Dirección</p><p>Janequeo esquina Freire, Concepción</p></div>
+        <div class="dato"><p class="etq">Cómo reconocernos</p><p>La esquina amarilla con techo azul</p></div>
+        <div class="dato"><p class="etq">WhatsApp</p><p>+56 9 7430 8654</p></div>
+        <div class="acciones">
+          <a class="btn btn-am" href="https://www.google.com/maps/search/?api=1&query=Janequeo+con+Freire+Concepci%C3%B3n+Chile" target="_blank" rel="noopener">Abrir en Google Maps</a>
+          <a class="btn btn-linea" href="https://www.instagram.com/papanata.cl/" target="_blank" rel="noopener">@papanata.cl</a>
+        </div>
+      </div>
+      <div class="donde-foto">
+        <figure>
+          <img src="esquina.webp" alt="La esquina de Papanata en Janequeo con Freire">
+          <figcaption>La esquina amarilla, bajo los letreros de Papanata.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap pie">
+    <b>PAPANATA</b>
+    <p>Ser feliz es la papa · Janequeo esquina Freire, Concepción</p>
+  </div>
+  <div class="hecho">
+    <div class="wrap">
+      <p><b>Página de muestra hecha por 1week</b> · Tu marca, en una semana.</p>
+      <p>@oneweek.chl · +56 9 8806 6109</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var form=document.getElementById('form-pedido');
+  var out=document.getElementById('cantidad');
+  var msg=document.getElementById('mensaje');
+  var enviar=document.getElementById('enviar');
+  var copiar=document.getElementById('copiar');
+  var cant=1;
+  function texto(){
+    var porcion=form.querySelector('input[name="porcion"]:checked').value;
+    var entrega=form.querySelector('input[name="entrega"]:checked').value;
+    var salsas=[].map.call(form.querySelectorAll('input[name="salsa"]:checked'),function(i){return i.value;});
+    var s=salsas.length?salsas.join(', ').replace(/, ([^,]*)$/,' y $1'):'sin salsa';
+    return 'Hola Papanata! 🍟\nQuiero pedir:\n• '+cant+' × '+porcion+'\n• Salsas: '+s+'\n• '+entrega+'\n\n¿Cuánto sería y en cuánto rato está?';
+  }
+  function pintar(){
+    var t=texto();
+    msg.textContent=t;
+    enviar.href='https://wa.me/56974308654?text='+encodeURIComponent(t);
+  }
+  document.getElementById('menos').addEventListener('click',function(){if(cant>1){cant--;out.textContent=cant;pintar();}});
+  document.getElementById('mas').addEventListener('click',function(){if(cant<20){cant++;out.textContent=cant;pintar();}});
+  form.addEventListener('change',pintar);
+  form.addEventListener('submit',function(e){e.preventDefault();});
+  copiar.addEventListener('click',function(){
+    var t=texto();
+    function listo(){copiar.textContent='Pedido copiado';setTimeout(function(){copiar.textContent='Copiar pedido';},2000);}
+    try{
+      navigator.clipboard.writeText(t).then(listo,function(){seleccionar();});
+    }catch(e){seleccionar();}
+    function seleccionar(){var r=document.createRange();r.selectNodeContents(msg);var sel=window.getSelection();sel.removeAllRanges();sel.addRange(r);copiar.textContent='Pedido seleccionado';}
+  });
+  pintar();
+})();
+</script>
+
+</body>
+</html>
